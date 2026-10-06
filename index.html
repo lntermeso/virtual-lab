@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Virtual Lab TPB ITB - Berpikir Komputasional Modul 1">
+  <title>V-Lab TPB | Input, Output & Percabangan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div>
+          <strong>Computational Thinking Virtual Lab</strong>
+          <span>Basic Computational Thinking with Python</span>
+        </div>
+      </div>
+
+      <nav class="side-nav" aria-label="Navigasi modul">
+        <button class="nav-item active" data-section="home"><span>⌂</span> Overview</button>
+        <button class="nav-item" data-section="io"><span>↔</span> Input & Output</button>
+        <button class="nav-item" data-section="types"><span>◈</span> Tipe & Operator</button>
+        <button class="nav-item" data-section="branch"><span>⑂</span> Percabangan</button>
+        <button class="nav-item" data-section="lab"><span>⚗</span> Virtual Lab</button>
+        <button class="nav-item" data-section="quiz"><span>✓</span> Challenge</button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="progress-mini">
+          <div class="progress-label"><span>Progress</span><b id="progressText">0%</b></div>
+          <div class="progress-track"><i id="progressBar"></i></div>
+        </div>
+        <button class="reset-btn" id="resetProgress">Reset progress</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn mobile-menu" id="menuBtn" aria-label="Buka menu">☰</button>
+        <div class="crumb">TPB ITB <span>/</span> Berpikir Komputasional <span>/</span> Modul 1</div>
+        <div class="top-actions">
+          <span class="status-dot"></span>
+          <span>Browser Lab</span>
+          <button class="icon-btn" id="themeBtn" aria-label="Ganti tema">☼</button>
+        </div>
+      </header>
+
+      <section id="home" class="page-section active">
+        <div class="hero">
+          <div class="hero-copy">
+            <div class="eyebrow">VIRTUAL LEARNING LAB • 01</div>
+            <h1>Input, Output,<br><em>& Percabangan.</em></h1>
+            <p>Belajar logika dasar Python melalui eksperimen visual. Uji input, amati output, susun operator, lalu lihat bagaimana percabangan mengubah jalannya program.</p>
+            <div class="hero-actions">
+              <button class="primary-btn" data-go="io">Mulai Eksperimen <span>→</span></button>
+              <button class="ghost-btn" data-go="lab">Buka Virtual Lab</button>
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Ilustrasi alur program">
+            <div class="orb orb-a"></div><div class="orb orb-b"></div>
+            <div class="flow-card">
+              <div class="flow-node input-node"><small>INPUT</small><b>42</b></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node logic-node"><small>IF</small><b>N % 2</b></div>
+              <div class="flow-arrow">→</div>
+              <div class="flow-node output-node"><small>OUTPUT</small><b>GENAP</b></div>
+            </div>
+            <div class="floating-chip chip-one">if / elif / else</div>
+            <div class="floating-chip chip-two">N % 2 == 0</div>
+          </div>
+        </div>
+
+        <div class="section-head">
+          <div><span class="kicker">LEARNING PATH</span><h2>Eksplorasi dalam 5 langkah</h2></div>
+          <span class="completion-badge" id="homeCompletion">0 / 5 selesai</span>
+        </div>
+        <div class="path-grid">
+          <button class="path-card" data-go="io"><span>01</span><b>Input → Output</b><small>Rasakan alur data paling dasar.</small></button>
+          <button class="path-card" data-go="types"><span>02</span><b>Tipe & Operator</b><small>Eksperimen dengan nilai dan simbol.</small></button>
+          <button class="path-card" data-go="branch"><span>03</span><b>Percabangan</b><small>Lihat keputusan program secara visual.</small></button>
+          <button class="path-card" data-go="lab"><span>04</span><b>Virtual Lab</b><small>Uji empat kasus praktikum.</small></button>
+          <button class="path-card" data-go="quiz"><span>05</span><b>Challenge</b><small>Ukur pemahamanmu.</small></button>
+        </div>
+
+        <div class="concept-banner">
+          <div class="concept-icon">i</div>
+          <div><b>Inti Modul</b><p>Program menerima <strong>input</strong>, mengolahnya dengan <strong>operator</strong> dan <strong>percabangan</strong>, kemudian menghasilkan <strong>output</strong>.</p></div>
+        </div>
+      </section>
+
+      <section id="io" class="page-section">
+        <div class="page-title"><span class="kicker">01 • INPUT & OUTPUT</span><h2>Program pertamamu</h2><p>Masukkan data, jalankan simulasi, dan lihat apa yang sebenarnya terjadi pada program Python.</p></div>
+        <div class="split-grid">
+          <article class="panel code-panel">
+            <div class="panel-head"><span>PYTHON SIMULATOR</span><span class="live-label">● LIVE</span></div>
+            <div class="code-window">
+              <div class="code-line"><i>1</i><code><span class="kw">nama</span> = <span class="fn">input</span>(<span class="str">"Nama: "</span>)</code></div>
+              <div class="code-line"><i>2</i><code><span class="kw">N</span> = <span class="fn">int</span>(<span class="fn">input</span>(<span class="str">"Angka: "</span>))</code></div>
+              <div class="code-line"><i>3</i><code><span class="fn">print</span>(<span class="str">f"Hi {nama}, angka kamu {N}"</span>)</code></div>
+              <div class="code-line"><i>4</i><code><span class="fn">print</span>(N + <span class="num">5</span>)</code></div>
+            </div>
+            <div class="input-stack">
+              <label>Nama <input id="ioName" value="Mahasiswa" maxlength="24"></label>
+              <label>Angka <input id="ioNumber" type="number" value="7"></label>
+              <button class="primary-btn full" id="runIO">▶ Jalankan program</button>
+            </div>
+          </article>
+
+          <article class="panel terminal-panel">
+            <div class="panel-head"><span>TERMINAL OUTPUT</span><button class="tiny-btn" id="clearTerminal">Clear</button></div>
+            <div class="terminal" id="terminal">
+              <div class="terminal-muted">Virtual Python 3.9 • ready</div>
+              <div>$ python modul1.py</div>
+              <div class="terminal-muted">Tekan “Jalankan program” untuk memulai.</div>
+            </div>
+            <div class="output-insight" id="ioInsight">💡 <b>Amati:</b> input dari user disimpan ke variabel sebelum digunakan oleh <code>print()</code>.</div>
+          </article>
+        </div>
+        <div class="tip-row">
+          <div><b>input()</b><span>Membaca data dari user.</span></div>
+          <div><b>int()</b><span>Mengubah input menjadi bilangan bulat.</span></div>
+          <div><b>print()</b><span>Menampilkan output ke layar.</span></div>
+        </div>
+      </section>
+
+      <section id="types" class="page-section">
+        <div class="page-title"><span class="kicker">02 • TIPE & OPERATOR</span><h2>Operator Playground</h2><p>Seret operator ke ekspresi, lalu lihat hasil evaluasinya. Coba pahami mengapa hasilnya demikian.</p></div>
+        <div class="playground">
+          <article class="panel expression-panel">
+            <div class="panel-head"><span>BUILD AN EXPRESSION</span><span id="exprStatus">● READY</span></div>
+            <div class="expression">
+              <span class="operand">13</span>
+              <div class="drop-zone" id="dropZone" data-operator="">?</div>
+              <span class="operand">5</span>
+              <span class="equals">=</span>
+              <strong id="exprResult">?</strong>
+            </div>
+            <div class="operator-bank" id="operatorBank">
+              <button draggable="true" class="operator" data-op="+">+</button>
+              <button draggable="true" class="operator" data-op="-">−</button>
+              <button draggable="true" class="operator" data-op="*">×</button>
+              <button draggable="true" class="operator" data-op="/">÷</button>
+              <button draggable="true" class="operator" data-op="//">//</button>
+              <button draggable="true" class="operator" data-op="%">%</button>
+            </div>
+            <button class="ghost-btn full" id="resetOperator">Reset expression</button>
+          </article>
+
+          <article class="panel type-panel">
+            <div class="panel-head"><span>TYPE INSPECTOR</span><span class="badge">Python basics</span></div>
+            <div class="type-input"><label>Nilai untuk diperiksa</label><input id="typeValue" value="123"></div>
+            <div class="type-cards">
+              <button data-type-test="int"><b>int</b><span>123</span></button>
+              <button data-type-test="float"><b>float</b><span>2.33</span></button>
+              <button data-type-test="str"><b>string</b><span>"abc"</span></button>
+              <button data-type-test="bool"><b>bool</b><span>True</span></button>
+            </div>
+            <div class="type-result" id="typeResult">Pilih tipe di atas untuk menguji nilai.</div>
+          </article>
+        </div>
+        <div class="operator-table panel">
+          <div class="panel-head"><span>QUICK REFERENCE</span><span>Contoh dari Modul 1</span></div>
+          <div class="op-grid">
+            <div><b>+</b><span>Penjumlahan</span><code>2 + 3 → 5</code></div>
+            <div><b>//</b><span>Pembagian dibulatkan ke bawah</span><code>13 // 5 → 2</code></div>
+            <div><b>%</b><span>Sisa bagi / modulo</span><code>13 % 5 → 3</code></div>
+            <div><b>==</b><span>Sama dengan</span><code>2 == 2 → True</code></div>
+            <div><b>and</b><span>Keduanya True</span><code>True and False → False</code></div>
+            <div><b>or</b><span>Salah satu True</span><code>True or False → True</code></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="branch" class="page-section">
+        <div class="page-title"><span class="kicker">03 • PERCABANGAN</span><h2>Decision Flow Lab</h2><p>Masukkan nilai N dan saksikan jalur <code>if / elif / else</code> yang dipilih program.</p></div>
+        <div class="branch-grid">
+          <article class="panel branch-controls">
+            <div class="panel-head"><span>INPUT PROGRAM</span><span class="badge">if • elif • else</span></div>
+            <label>Nilai N <input id="branchN" type="number" value="8"></label>
+            <button class="primary-btn full" id="runBranch">Evaluate N</button>
+            <div class="branch-code">
+              <div id="codeIf"><b>if</b> N &gt; 0:</div>
+              <div id="codePositive">→ N adalah positif</div>
+              <div id="codeElif"><b>elif</b> N &lt; 0:</div>
+              <div id="codeNegative">→ N adalah negatif</div>
+              <div id="codeElse"><b>else:</b></div>
+              <div id="codeZero">→ N adalah nol</div>
+            </div>
+            <div class="decision-result" id="branchResult">Masukkan nilai lalu klik Evaluate.</div>
+          </article>
+
+          <article class="panel canvas-panel">
+            <div class="panel-head"><span>CANVAS VISUALIZER</span><span class="live-label">● REAL-TIME</span></div>
+            <canvas id="branchCanvas" width="760" height="440" aria-label="Visualisasi alur percabangan"></canvas>
+            <div class="canvas-legend"><span><i class="dot input"></i> Input</span><span><i class="dot decision"></i> Decision</span><span><i class="dot output"></i> Output</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="lab" class="page-section">
+        <div class="page-title"><span class="kicker">04 • VIRTUAL LAB</span><h2>Practical Simulation</h2><p>Empat eksperimen dari latihan Modul 1. Setiap eksperimen memberikan umpan balik langsung dan menyimpan hasilmu.</p></div>
+        <div class="lab-tabs" role="tablist">
+          <button class="lab-tab active" data-lab="oddEven">01 Ganjil-Genap</button>
+          <button class="lab-tab" data-lab="exam">02 Ujian Riz</button>
+          <button class="lab-tab" data-lab="bravo">03 Bilangan Bravo</button>
+          <button class="lab-tab" data-lab="frog">04 Lompat Katak</button>
+        </div>
+
+        <article class="panel experiment active" id="oddEven">
+          <div class="experiment-info"><span class="experiment-number">01</span><div><h3>Ganjil atau Genap?</h3><p>Gunakan konsep <code>%</code> dan percabangan untuk mengembangkan program bilangan positif.</p></div></div>
+          <div class="experiment-work">
+            <div class="exp-input"><label>Masukkan N <input id="oddN" type="number" value="42"></label><button class="primary-btn" id="checkOdd">Check</button></div>
+            <div class="algorithm-steps" id="oddSteps"><span>1</span> N > 0? <span>2</span> N % 2 == 0? <span>3</span> Output</div>
+            <div class="lab-result neutral" id="oddResult">Hasil eksperimen akan muncul di sini.</div>
+          </div>
+        </article>
+
+        <article class="panel experiment" id="exam">
+          <div class="experiment-info"><span class="experiment-number">02</span><div><h3>Apakah Tuan Riz Selesai?</h3><p>Total waktu 120 menit. Sisa isian = 10 menit/soal, sisa esai = 20 menit/soal.</p></div></div>
+          <div class="experiment-work">
+            <div class="form-grid">
+              <label>Isian selesai <input id="essayDone" type="number" min="0" max="14" value="12"></label>
+              <label>Esai selesai <input id="shortDone" type="number" min="0" max="2" value="1"></label>
+              <label>Waktu sudah terpakai (menit) <input id="examElapsed" type="number" min="0" max="120" value="60"></label>
+            </div>
+            <button class="primary-btn" id="checkExam">Simulasikan</button>
+            <div class="lab-result neutral" id="examResult">Isi data berdasarkan situasi soal.</div>
+          </div>
+        </article>
+
+        <article class="panel experiment" id="bravo">
+          <div class="experiment-info"><span class="experiment-number">03</span><div><h3>Bravo Number Detector</h3><p>Jumlah seluruh digit harus habis dibagi oleh setiap digit yang <strong>bukan nol</strong>.</p></div></div>
+          <div class="experiment-work">
+            <label>Bilangan 4 digit <input id="bravoN" type="number" min="1000" max="9999" value="4228"></label>
+            <button class="primary-btn" id="checkBravo">Deteksi</button>
+            <div class="digit-visual" id="digitVisual"></div>
+            <div class="lab-result neutral" id="bravoResult">Contoh 4228 seharusnya menghasilkan Bravo.</div>
+          </div>
+        </article>
+
+        <article class="panel experiment" id="frog">
+          <div class="experiment-info"><span class="experiment-number">04</span><div><h3>Frog Jump Simulator</h3><p>Lompatan bergantian: kanan <b>a</b>, kiri <b>b</b>. Nilai k menentukan jumlah lompatan sesuai aturan pada modul.</p></div></div>
+          <div class="experiment-work">
+            <div class="form-grid">
+              <label>Koordinat awal <input id="frogX" type="number" value="0"></label>
+              <label>Lompatan kanan (a) <input id="frogA" type="number" min="0" value="5"></label>
+              <label>Lompatan kiri (b) <input id="frogB" type="number" min="0" value="1"></label>
+            </div>
+            <button class="primary-btn" id="runFrog">Run Simulation</button>
+            <canvas id="frogCanvas" width="900" height="180" aria-label="Simulasi posisi katak"></canvas>
+            <div class="lab-result neutral" id="frogResult">Contoh modul: 0, a=5, b=1 → posisi akhir 13.</div>
+          </div>
+        </article>
+      </section>
+
+      <section id="quiz" class="page-section">
+        <div class="page-title"><span class="kicker">05 • CHALLENGE</span><h2>Prove your logic</h2><p>Jawab lima pertanyaan. Kamu akan mendapatkan skor dan penjelasan, bukan hanya benar atau salah.</p></div>
+        <form class="panel quiz-panel" id="quizForm">
+          <div class="quiz-question"><span>01</span><div><h3>Apa hasil dari <code>13 % 5</code>?</h3><label><input type="radio" name="q1" value="2"> 2</label><label><input type="radio" name="q1" value="3"> 3</label><label><input type="radio" name="q1" value="2.6"> 2.6</label></div></div>
+          <div class="quiz-question"><span>02</span><div><h3>Fungsi <code>input()</code> pada Python digunakan untuk...</h3><label><input type="radio" name="q2" value="a"> Menampilkan output</label><label><input type="radio" name="q2" value="b"> Membaca input dari user</label><label><input type="radio" name="q2" value="c"> Menghapus variabel</label></div></div>
+          <div class="quiz-question"><span>03</span><div><h3>Jika N = 0, cabang mana yang dijalankan?</h3><label><input type="radio" name="q3" value="a"> if N &gt; 0</label><label><input type="radio" name="q3" value="b"> elif N &lt; 0</label><label><input type="radio" name="q3" value="c"> else</label></div></div>
+          <div class="quiz-question"><span>04</span><div><h3>Tipe data untuk nilai <code>2.331973</code> adalah...</h3><label><input type="radio" name="q4" value="a"> int</label><label><input type="radio" name="q4" value="b"> float</label><label><input type="radio" name="q4" value="c"> bool</label></div></div>
+          <div class="quiz-question"><span>05</span><div><h3>Operator yang mengecek “sama dengan” adalah...</h3><label><input type="radio" name="q5" value="a"> =</label><label><input type="radio" name="q5" value="b"> ==</label><label><input type="radio" name="q5" value="c"> !=</label></div></div>
+          <button class="primary-btn" type="submit">Submit challenge →</button>
+          <div class="quiz-result" id="quizResult" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <footer class="footer">V-Lab TPB ITB • Modul 1 — Input, Output, Tipe Data, Operator & Percabangan <span>Frontend only • No server required</span></footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
